@@ -26,7 +26,6 @@ vim.opt.ignorecase = true
 vim.opt.wildignorecase = true
 vim.opt.formatoptions:remove { "c", "r", "o" }
 
-vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 
 --remaps
@@ -36,13 +35,17 @@ vim.keymap.set("n", "<leader>q", ":q<cr>")
 vim.keymap.set("n", "<leader>;", ":<C-p>")
 
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "K", ":m '>-2<cr>gv=gv")
+vim.keymap.set("v", "K", ":m  -2 ^M <CR>gv")
 
 vim.keymap.set("n", "<C-u", "<C-u>zz")
 vim.keymap.set("n", "<C-d", "<Cud>zz")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 vim.keymap.set("n", "<leader>-", "<C-w>s")
 vim.keymap.set("n", "<leader>\\", "<c-w>v")
@@ -51,6 +54,9 @@ vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
+
+vim.keymap.set("n", "<CR>", "m`o<Esc>``")
+vim.keymap.set("n", "-", "m`O<Esc>``")
 
 vim.keymap.set("n", "<leader>i", ":bp<cr>")
 vim.keymap.set("n", "<leader>o", ":bn<cr>")
