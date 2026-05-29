@@ -19,7 +19,6 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 6
 
-
 vim.opt.updatetime = 50
 
 vim.opt.ignorecase = true
@@ -27,6 +26,11 @@ vim.opt.wildignorecase = true
 vim.opt.formatoptions:remove { "c", "r", "o" }
 
 vim.opt.cursorline = true
+
+vim.opt.signcolumn = "no"
+
+vim.opt.incsearch = true  -- Show matches while typing
+vim.opt.hlsearch = true   -- Highlight all matches
 
 --remaps
 vim.keymap.set("i", "jk", "<Esc>")
@@ -43,6 +47,8 @@ vim.keymap.set("n", "<C-d", "<Cud>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set("n", "<leader>/", ":noh<CR>")
+
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
@@ -54,9 +60,6 @@ vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
-
-vim.keymap.set("n", "<CR>", "m`o<Esc>``")
-vim.keymap.set("n", "-", "m`O<Esc>``")
 
 vim.keymap.set("n", "<leader>i", ":bp<cr>")
 vim.keymap.set("n", "<leader>o", ":bn<cr>")
