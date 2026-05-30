@@ -65,19 +65,14 @@ local plugins = {
     -- Completion
     {
         'saghen/blink.cmp',
+        -- This handles the native compilation/download for the main plugin
         build = function() require('blink.cmp').build():wait(60000) end,
         dependencies = {
-            {
-                'saghen/blink.lib',
-                build = function() require('blink.cmp').build():wait(60000) end,
-            },
+            'saghen/blink.lib', -- Simply list it here; it doesn't need its own build function
         },
         opts = {
             keymap = {
                 preset = 'default',
-                -- ['<CR>']      = { 'accept', 'fallback' },
-                -- ['<Tab>']     = { 'select_next', 'fallback' },
-                -- ['<S-Tab>']   = { 'select_prev', 'fallback' },
                 ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
                 ['<C-u>']     = { 'scroll_documentation_up', 'fallback' },
                 ['<C-d>']     = { 'scroll_documentation_down', 'fallback' },
